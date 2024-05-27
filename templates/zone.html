@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <title>Atmosph'R</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="http://127.0.0.1:5001/"> <img class="logo4" src="{{url_for('static', filename='images/logo2.png') }}"></a>
+            <p class="nav-text">ATMOSPH'R</p>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="dashboard">
+            <div class="dashboard-table">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            {% for colonne in sous_zones.columns %}
+                                <th>{{ colonne }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for index, ligne in sous_zones.iterrows() %}
+                            <tr>
+                                {% for valeur in ligne %}
+                                    <td>{{ valeur }}</td>
+                                {% endfor %}
+                                {% if echelle != "Site" %}
+                                    <td><a href="/zone/{{sous_echelle}}/{{ligne[0]}}">En savoir plus</a></td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

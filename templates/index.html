@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <title>Atmosph'R</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo4" src="{{url_for('static', filename='images/logo2.png') }}">
+            <p class="nav-text">ATMOSPH'R</p>
+        </nav>
+    </header>
+    <main>
+        <div class="content-wrapper">
+            <div class="text-and-image">
+                <p class="texte">
+                    Lors des périodes de pics de pollution touchant les grandes agglomérations françaises, la qualité de l'air devient une préoccupation majeure. Les Agences Agréées de Surveillance de la Qualité de l'Air (AASQA) en France sont responsables de la surveillance de cette qualité, une tâche rendue obligatoire dans les agglomérations de plus de 100 000 habitants. Un site dédié permet de visualiser les données atmosphériques pour une zone de choix.<br><br>Pour accéder à ces informations, il faut d'abord sélectionner un organisme, puis une Zone d'Action Surveillée (ZAS), suivie d'un site spécifique. Une fois ces étapes franchies, les données atmosphériques recherchées sont disponibles. La surveillance continue de la qualité de l'air est cruciale pour prendre des mesures appropriées afin de minimiser les risques pour la santé publique lors de situations de pollution atmosphérique.</p>
+                <img class="image1" src="{{ url_for('static', filename='images/vue.jpg') }}">
+            </div>
+            <div class="table-wrapper">
+                <table class="tableauOrga" border="5">
+                    <thead>
+                        <tr>
+                            {% for colonne in orgas.columns %}
+                                <th>{{ colonne }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for index, ligne in orgas.iterrows() %}
+                            <tr>
+                                {% for valeur in ligne %}
+                                    <td><a href="/zone/Organisme/{{valeur}}"> {{ valeur }} </a></td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+        Données extraites de la base de données de l'AASQA <br>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,143 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(173, 198, 240);
+}
+
+main {
+    background-color: rgb(178, 200, 240);
+}
+
+a {
+    /*color: #dc9ad2;*/
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    background-color: rgb(134, 171, 109);
+    border-radius: 25px;
+    background-image: url(images/arbres.png);
+    background-repeat: repeat-x;
+}
+
+nav img {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.nav-text {
+    font-size: 48px;
+    background-image: url(images/nuage.png);
+    background-size: contain;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-and-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.text-and-image p {
+    width: 50%; 
+}
+
+.text-and-image img {
+    width: 50%; 
+    height: auto;
+}
+
+.table-wrapper {
+    padding-top: 25px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+}
+
+.tableauOrga {
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.tableauOrga th, .tableauOrga td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.texte {
+    font-size: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.image1 {
+    border-radius: 25px;
+}
+
+.tableauOrga thead th {
+    font-size: 250%;
+    text-align: center;
+}
+
+footer {
+    background-color: rgb(134, 171, 109);
+    text-align: center;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 150%;
+    border-radius: 20px;
+    padding-bottom: 15px;
+}
+
+#poll {
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+
+.dashboard-table {
+    width: 75%;
+    padding-left: 10px;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.dashboard-table th {
+    font-size: 150%;
+}
+
+@media (min-width: 1200px) {
+    .dashboard-table table {
+        width: 100%; 
+    }
+}
+.logo4{
+    width: 120px;
+}
